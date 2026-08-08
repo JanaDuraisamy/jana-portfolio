@@ -82,7 +82,7 @@ export function ScreenshotGallery({ screenshots }: ScreenshotGalleryProps) {
       {active &&
         createPortal(
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] flex flex-col bg-black/85 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
             aria-label={`${active.label} screenshot`}
@@ -97,50 +97,53 @@ export function ScreenshotGallery({ screenshots }: ScreenshotGalleryProps) {
               <span aria-hidden="true">×</span>
             </button>
 
-            <button
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                step(-1);
-              }}
-              className="absolute left-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white transition-colors hover:bg-white/15 sm:left-5"
-              aria-label="Previous screenshot"
-            >
-              <span aria-hidden="true">←</span>
-            </button>
+            <div aria-hidden="true" className="h-16 shrink-0" />
 
-            <button
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                step(1);
-              }}
-              className="absolute right-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white transition-colors hover:bg-white/15 sm:right-5"
-              aria-label="Next screenshot"
-            >
-              <span aria-hidden="true">→</span>
-            </button>
+            <div className="relative flex min-h-0 flex-1 items-center justify-center p-4">
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  step(-1);
+                }}
+                className="absolute left-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white transition-colors hover:bg-white/15 sm:left-5"
+                aria-label="Previous screenshot"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
 
-            <figure
-              className="flex max-h-[90svh] w-full max-w-5xl flex-col items-center"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <div className="relative w-full overflow-hidden rounded-xl border border-white/10">
-                <Image
-                  src={active.src}
-                  alt={`${active.label} screenshot`}
-                  width={1440}
-                  height={900}
-                  sizes="(max-width: 1024px) 100vw, 1024px"
-                  className="h-auto max-h-[78svh] w-full object-contain"
-                />
-              </div>
-              <figcaption className="mt-3 text-center text-sm text-slate-300">
-                {active.label}
-                <span className="mx-2 text-slate-600">·</span>
-                {activeIndex !== null ? activeIndex + 1 : ""} / {screenshots.length}
-              </figcaption>
-            </figure>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  step(1);
+                }}
+                className="absolute right-2 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white transition-colors hover:bg-white/15 sm:right-5"
+                aria-label="Next screenshot"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <figure
+                className="flex h-full w-full max-w-5xl flex-col items-center"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="relative min-h-0 w-full flex-1 overflow-hidden rounded-xl border border-white/10">
+                  <Image
+                    src={active.src}
+                    alt={`${active.label} screenshot`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="shrink-0 pt-3 text-center text-sm text-slate-300">
+                  {active.label}
+                  <span className="mx-2 text-slate-600">·</span>
+                  {activeIndex !== null ? activeIndex + 1 : ""} / {screenshots.length}
+                </figcaption>
+              </figure>
+            </div>
           </div>,
           document.body
         )}
