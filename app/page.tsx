@@ -37,7 +37,7 @@ export default function Home() {
             <div className="mt-14 flex max-w-full flex-col items-start gap-3 text-sm text-slate-400 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
               <a className="inline-link break-words" href="https://www.linkedin.com/in/jana-duraisamy-a4476b2a0/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
               <a className="inline-link break-words" href="mailto:janajeeva203@gmail.com">janajeeva203@gmail.com</a>
-              <span className="break-words text-slate-500" title="GitHub profile link has not been provided">GitHub — link to be added</span>
+              <a className="inline-link break-words" href="https://github.com/JanaDuraisamy" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="flex items-center gap-5">
             <a href="mailto:janajeeva203@gmail.com" className="hover:text-slate-300">Email</a>
             <a href="https://www.linkedin.com/in/jana-duraisamy-a4476b2a0/" target="_blank" rel="noreferrer" className="hover:text-slate-300">LinkedIn</a>
-            <span title="GitHub profile link has not been provided">GitHub — link to be added</span>
+            <a href="https://github.com/JanaDuraisamy" target="_blank" rel="noreferrer" className="hover:text-slate-300">GitHub</a>
           </div>
         </div>
       </footer>
