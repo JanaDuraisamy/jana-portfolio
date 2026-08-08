@@ -1,3 +1,8 @@
+export type ProjectScreenshot = {
+  src: string;
+  label: string;
+};
+
 export type Project = {
   name: string;
   status?: "Beta / Client Review" | "Currently Developing";
@@ -6,6 +11,7 @@ export type Project = {
   technologies: string[];
   features: string[];
   futureAssets: ("Screenshots" | "Architecture" | "GitHub" | "Live demo")[];
+  screenshots?: ProjectScreenshot[];
 };
 
 export const skills = [
@@ -41,6 +47,16 @@ export const projects: Project[] = [
       "Authentication and settings",
     ],
     futureAssets: ["Screenshots", "Architecture", "GitHub", "Live demo"],
+    screenshots: [
+      { src: "/projects/lobal-chess-academy/login.png", label: "Login" },
+      { src: "/projects/lobal-chess-academy/dashboard.png", label: "Dashboard" },
+      { src: "/projects/lobal-chess-academy/students.png", label: "Students" },
+      { src: "/projects/lobal-chess-academy/batches.png", label: "Batches" },
+      { src: "/projects/lobal-chess-academy/attendance.png", label: "Attendance" },
+      { src: "/projects/lobal-chess-academy/payments.png", label: "Payments" },
+      { src: "/projects/lobal-chess-academy/reports.png", label: "Reports" },
+      { src: "/projects/lobal-chess-academy/settings.png", label: "Settings" },
+    ],
   },
   {
     name: "BrewFlow POS / Business Management System",

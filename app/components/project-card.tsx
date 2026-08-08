@@ -1,4 +1,5 @@
 import type { Project } from "../data";
+import { ScreenshotGallery } from "./screenshot-gallery";
 
 type ProjectCardProps = {
   project: Project;
@@ -48,6 +49,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               </li>
             ))}
           </ul>
+          {project.screenshots && project.screenshots.length > 0 && (
+            <div className="mt-7">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Screenshots</h4>
+              <ScreenshotGallery screenshots={project.screenshots} />
+            </div>
+          )}
           <div className="mt-7 rounded-xl border border-dashed border-white/10 px-4 py-3">
             <p className="text-xs leading-5 text-slate-400">
               Project detail structure is ready for {project.futureAssets.join(", ")} when they are available.

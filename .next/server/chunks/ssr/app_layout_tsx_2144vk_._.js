@@ -1,3 +1,0 @@
-module.exports=[33290,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{children:a})})},"metadata",0,{title:"Jana Duraisamy | Python & Full-Stack Developer",description:"Portfolio of Jana Duraisamy, a Python and full-stack developer building practical software solutions for real-world problems.",keywords:["Jana Duraisamy","Python Developer","Full-Stack Developer","Next.js","Django"],authors:[{name:"Jana Duraisamy"}],robots:{index:!0,follow:!0}}])},70864,function(a){a.n(a.i(33290))}];
-
-//# sourceMappingURL=app_layout_tsx_2144vk_._.js.map
